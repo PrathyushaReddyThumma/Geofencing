@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>SignUp</title>
+{% endblock %}
+
+{% block body %}
+<!DOCTYPE html> 
+<html> 
+<style>  
+    form { 
+        border: 3px solid #f1f1f1; 
+    } 
+    input[type=text], 
+    input[type=password],
+    .ab { 
+        width: 40%; 
+        padding: 12px 20px; 
+        margin: 8px 0; 
+        display: inline-block; 
+        border: 1px solid #ccc; 
+        box-sizing: border-box; 
+    }
+    button { 
+        background-color: #4CAF50; 
+        color: white; 
+        padding: 14px 20px; 
+        margin: 8px 0; 
+        border: none; 
+        cursor: pointer; 
+        width: 25%; 
+    }
+    button:hover { 
+        opacity: 0.8; 
+    } 
+    .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px; 
+        background-color: #f44336; 
+    } 
+    .container { 
+        padding: 16px; 
+        text-align: center;
+    } 
+    span.psw { 
+        float: right; 
+        padding-top: 16px; 
+    } 
+</style> 
+  
+<body> 
+  
+    <h2>SignUp</h2> 
+    {% with messages = get_flashed_messages() %}  
+        {% if messages %}  
+              {% for message in messages %}  
+                   <h3>{{ message }}</h3>  
+              {% endfor %}  
+        {% endif %}  
+     {% endwith %}
+    <form method="post">
+        <div class="container" style="align-items:center;">   
+                <label> Role : </label>  
+                <select style="margin-left:36px;" class="ab" id="abcd" name="abcd">  
+                <option value = "c"> Manager  
+                </option>  
+                <option value = "d"> Employee  
+                </option>  
+                </select><br>  
+            <label>Email:</label>
+            <input style="margin-left:36px;" type="text" name="uname" pattern="[a-zA-z0-9@!#$%^&*\/.]+\@(gmail.com)" required><br>
+            <label style="margin-right:10px">Password:</label>
+            <input style="margin-left:0px;" type="password" name="psw" pattern="[A-Za-z0-9@!#$%^&*]+" required><br>
+            <label>Name:</label>
+            <input style="margin-left:30px;" type="text" name="name" pattern="*"><br>
+            <label>Phone:</label>
+            <input style="margin-left:30px;" type="text" name="ph" pattern="[0-9]*"><br>
+            <div>
+                <button type="submit" value="Signup" formaction="/postsignup">Signup</button> <br> 
+            </div>
+            <div class="container" style="background-color:#f1f1f1"> 
+                <button type="submit" class="cancelbtn" formaction="......">Cancel</button> 
+            </div>
+            </div>
+    </form> 
+  
+</body> 
+</html>
+{%endblock%}

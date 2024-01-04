@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>loginpage</title>
+{% endblock %}
+
+{% block body %}
+
+<!DOCTYPE html> 
+<html> 
+<style> 
+
+      
+    form { 
+        border: 3px solid #f1f1f1; 
+    } 
+      
+    button { 
+        background-color: #4CAF50; 
+        color: white; 
+        padding: 14px 20px; 
+        margin: 8px 0; 
+        border: none; 
+        cursor: pointer;
+        width: 25%; 
+    } 
+
+    button:hover { 
+        opacity: 0.8; 
+    } 
+
+    .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px; 
+        background-color: #f44336; 
+    }       
+    .container { 
+        padding: 16px; 
+        text-align: center;
+    } 
+
+      
+    span.psw { 
+        float: right; 
+        padding-top: 16px; 
+    } 
+    table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+    #t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 th {
+  background-color: black;
+  color: white;
+}
+</style> 
+  
+<body>
+  <form> 
+    <div class="container" style="text-align: center;"> 
+    <table id="t01">
+        <tr>
+          <th>Email ID</th>
+          <th>Time</th> 
+          <th>Message</th>
+        </tr>
+        {% for post in posts%}
+        <tr>
+          <td>{{post.emp_mail}}</td>
+          <td>{{post.time}}</td>
+          <td>{{post.notify}}</td>
+        </tr>
+        {%endfor%}
+      </table>
+      </div>
+      <div>
+        <button type="submit" value="signin" formaction="/consentmng">Backk</button> <br>
+    </div>
+    <div>
+      <a class="btn btn-danger float-right" href = '/out'>Sign out </a>
+  </div>
+</form>
+</body> 
+</html>
+{%endblock%}

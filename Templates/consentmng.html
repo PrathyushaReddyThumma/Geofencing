@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>loginpage</title>
+{% endblock %}
+
+{% block body %}
+<!DOCTYPE html> 
+<html> 
+<style>       
+    form { 
+        border: 3px solid #f1f1f1; 
+    }   
+    button { 
+        background-color: #4CAF50; 
+        color: white; 
+        padding: 14px 20px; 
+        margin: 8px 0; 
+        border: none; 
+        cursor: pointer;
+        width: 25%; 
+    } 
+    button:hover { 
+        opacity: 0.8; 
+    } 
+    .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px; 
+        background-color: #f44336; 
+    }       
+    .container { 
+        padding: 16px; 
+        text-align: center;
+    }       
+    span.psw { 
+        float: right; 
+        padding-top: 16px; 
+    }  
+</style>   
+<body> 
+    <form method="post"> 
+        <div class="container" style="text-align: center;"> 
+            <div>
+                <button type="submit" value="s1" formaction="/myattm">View my Attendance</button> <br>
+            </div>
+            <div>
+                <button type="submit" value="s2" formaction="/myempm">View Employee Attendance</button> <br>
+            </div>
+            <div>
+                <button type="submit" value="s3" formaction="/postattm">Post Attendance</button> <br>
+            </div>
+            </div>
+    </form> 
+    <div>
+        <a class="btn btn-danger float-right" href = '/out'>Sign out </a>
+    </div>
+</body> 
+</html>
+{% endblock %}
